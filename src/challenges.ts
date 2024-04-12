@@ -29,4 +29,8 @@
 
 //3. Tuple to Object
 
+const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
 
+type TupleToObject<A extends readonly string[]> = { [K in A[number]]: K }
+
+type result = TupleToObject<typeof tuple>

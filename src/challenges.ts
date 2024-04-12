@@ -29,8 +29,4 @@
 
 //3. Tuple to Object
 
-const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
 
-type TupleToObject<A extends any[]> = { [I in A]:}
-
-type result = TupleToObject<typeof tuple>

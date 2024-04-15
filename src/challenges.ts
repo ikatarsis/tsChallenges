@@ -46,9 +46,15 @@
 
 //5. Length of Tuple
 
-type tesla = ['tesla', 'model 3', 'model X', 'model Y']
-type spaceX = ['FALCON 9', 'FALCON HEAVY', 'DRAGON', 'STARSHIP', 'HUMAN SPACEFLIGHT']
+// type tesla = ['tesla', 'model 3', 'model X', 'model Y']
+// type spaceX = ['FALCON 9', 'FALCON HEAVY', 'DRAGON', 'STARSHIP', 'HUMAN SPACEFLIGHT']
+//
+// type Length<T extends readonly any[]> = T['length']
+//
+// type spaceXLength = Length<spaceX>
 
-type Length<T extends readonly any[]> = T['length']
+//6. Exclude
 
-type spaceXLength = Length<spaceX>
+type MyExclude<T, U> = T extends U ? never : T
+
+type Result = MyExclude<'a' | 'b' | 'c', 'a'> // 'b' | 'c'

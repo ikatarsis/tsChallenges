@@ -36,10 +36,19 @@
 // type result = TupleToObject<typeof tuple>
 
 //4. First of Array
-type arr1 = ['a', 'b', 'c']
-type arr2 = [3, 2, 1]
 
-type First<Arr extends any[]> = Arr extends [] ? never : Arr[0]
+// type arr1 = ['a', 'b', 'c']
+// type arr2 = [3, 2, 1]
+//
+// type First<Arr extends any[]> = Arr extends [] ? never : Arr[0]
+//
+// type head1 = First<arr2>
 
-type head1 = First<arr2>
+//5. Length of Tuple
 
+type tesla = ['tesla', 'model 3', 'model X', 'model Y']
+type spaceX = ['FALCON 9', 'FALCON HEAVY', 'DRAGON', 'STARSHIP', 'HUMAN SPACEFLIGHT']
+
+type Length<T extends readonly any[]> = T['length']
+
+type spaceXLength = Length<spaceX>

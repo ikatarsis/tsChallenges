@@ -29,8 +29,17 @@
 
 //3. Tuple to Object
 
-const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
+// const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
+//
+// type TupleToObject<A extends readonly string[]> = { [K in A[number]]: K }
+//
+// type result = TupleToObject<typeof tuple>
 
-type TupleToObject<A extends readonly string[]> = { [K in A[number]]: K }
+//4. First of Array
+type arr1 = ['a', 'b', 'c']
+type arr2 = [3, 2, 1]
 
-type result = TupleToObject<typeof tuple>
+type First<Arr extends any[]> = Arr extends [] ? never : Arr[0]
+
+type head1 = First<arr2>
+
